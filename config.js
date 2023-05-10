@@ -13,7 +13,15 @@ System.register([], function (_export, _context) {
         },
         "global.css": true,
         "layout": "main-layout",
-        "params": {},
+        "params": {
+          "openia": {
+            "key": "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"
+          },
+          "elevenlabs": {
+            "key": "ebe05ca0a4d9aafb4024d0666471a0c7",
+            "id": "pNInz6obpgDQGcFmaJgB"
+          }
+        },
         "ssr": {},
         "backend": {}
       });

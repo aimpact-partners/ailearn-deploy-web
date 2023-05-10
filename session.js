@@ -1,8 +1,8 @@
 System.register(["@beyond-js/kernel@0.1.9/bundle", "@beyond-js/reactive@1.0.0/model"], function (_export, _context) {
   "use strict";
 
-  var dependency_0, dependency_1, bimport, __Bundle, __pkg, ims, SessionManager, __beyond_pkg, hmr;
-  _export("SessionManager", void 0);
+  var dependency_0, dependency_1, bimport, __Bundle, __pkg, ims, sessionWrapper, __beyond_pkg, hmr;
+  _export("sessionWrapper", void 0);
   return {
     setters: [function (_beyondJsKernel019Bundle) {
       dependency_0 = _beyondJsKernel019Bundle;
@@ -30,31 +30,37 @@ System.register(["@beyond-js/kernel@0.1.9/bundle", "@beyond-js/reactive@1.0.0/mo
       INTERNAL MODULE: ./index
       ***********************/
       ims.set('./index', {
-        hash: 1482609809,
+        hash: 1725900639,
         creator: function (require, exports) {
           "use strict";
 
           Object.defineProperty(exports, "__esModule", {
             value: true
           });
-          exports.SessionManager = void 0;
+          exports.sessionWrapper = void 0;
           var _model = require("@beyond-js/reactive/model");
-          /*bundle*/
           class SessionManager extends _model.ReactiveModel {
+            get logged() {
+              return !!localStorage.getItem("session");
+            }
             login(credentials) {
               localStorage.setItem("session", JSON.stringify(credentials));
+              this.triggerEvent();
             }
             logout() {
               localStorage.removeItem("session");
+              this.triggerEvent();
             }
           }
-          exports.SessionManager = SessionManager;
+          /*bundle*/
+          const sessionWrapper = new SessionManager();
+          exports.sessionWrapper = sessionWrapper;
         }
       });
       __pkg.exports.descriptor = [{
         "im": "./index",
-        "from": "SessionManager",
-        "name": "SessionManager"
+        "from": "sessionWrapper",
+        "name": "sessionWrapper"
       }];
       // Module exports
       __pkg.exports.process = function ({
@@ -62,7 +68,7 @@ System.register(["@beyond-js/kernel@0.1.9/bundle", "@beyond-js/reactive@1.0.0/mo
         prop,
         value
       }) {
-        (require || prop === 'SessionManager') && _export("SessionManager", SessionManager = require ? require('./index').SessionManager : value);
+        (require || prop === 'sessionWrapper') && _export("sessionWrapper", sessionWrapper = require ? require('./index').sessionWrapper : value);
       };
       _export("__beyond_pkg", __beyond_pkg = __pkg);
       _export("hmr", hmr = new function () {
@@ -73,4 +79,4 @@ System.register(["@beyond-js/kernel@0.1.9/bundle", "@beyond-js/reactive@1.0.0/mo
     }
   };
 });
-//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OztVQUFBO1VBQ087VUFBVSxNQUFPQSxjQUFlLFNBQVFDLG9CQUFxQjtZQUNsRUMsS0FBSyxDQUFDQyxXQUFXO2NBQ2ZDLFlBQVksQ0FBQ0MsT0FBTyxDQUFDLFNBQVMsRUFBRUMsSUFBSSxDQUFDQyxTQUFTLENBQUNKLFdBQVcsQ0FBQyxDQUFDO1lBQzlEO1lBQ0FLLE1BQU07Y0FDSkosWUFBWSxDQUFDSyxVQUFVLENBQUMsU0FBUyxDQUFDO1lBQ3BDOztVQUNEQyIsIm5hbWVzIjpbIlNlc3Npb25NYW5hZ2VyIiwiUmVhY3RpdmVNb2RlbCIsImxvZ2luIiwiY3JlZGVudGlhbHMiLCJsb2NhbFN0b3JhZ2UiLCJzZXRJdGVtIiwiSlNPTiIsInN0cmluZ2lmeSIsImxvZ291dCIsInJlbW92ZUl0ZW0iLCJleHBvcnRzIl0sInNvdXJjZVJvb3QiOiIvIiwic291cmNlcyI6WyJpbmRleC50cyJdLCJzb3VyY2VzQ29udGVudCI6W251bGxdfQ==
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OztVQUFBO1VBSUEsTUFBTUEsY0FBZSxTQUFRQyxvQkFBdUI7WUFDbEQsSUFBSUMsTUFBTTtjQUNSLE9BQU8sQ0FBQyxDQUFDQyxZQUFZLENBQUNDLE9BQU8sQ0FBQyxTQUFTLENBQUM7WUFDMUM7WUFFQUMsS0FBSyxDQUFDQyxXQUFXO2NBQ2ZILFlBQVksQ0FBQ0ksT0FBTyxDQUFDLFNBQVMsRUFBRUMsSUFBSSxDQUFDQyxTQUFTLENBQUNILFdBQVcsQ0FBQyxDQUFDO2NBQzVELElBQUksQ0FBQ0ksWUFBWSxFQUFFO1lBQ3JCO1lBQ0FDLE1BQU07Y0FDSlIsWUFBWSxDQUFDUyxVQUFVLENBQUMsU0FBUyxDQUFDO2NBQ2xDLElBQUksQ0FBQ0YsWUFBWSxFQUFFO1lBQ3JCOztVQUdLO1VBQVcsTUFBTUcsY0FBYyxHQUFHLElBQUliLGNBQWMsRUFBRTtVQUFDYyIsIm5hbWVzIjpbIlNlc3Npb25NYW5hZ2VyIiwiUmVhY3RpdmVNb2RlbCIsImxvZ2dlZCIsImxvY2FsU3RvcmFnZSIsImdldEl0ZW0iLCJsb2dpbiIsImNyZWRlbnRpYWxzIiwic2V0SXRlbSIsIkpTT04iLCJzdHJpbmdpZnkiLCJ0cmlnZ2VyRXZlbnQiLCJsb2dvdXQiLCJyZW1vdmVJdGVtIiwic2Vzc2lvbldyYXBwZXIiLCJleHBvcnRzIl0sInNvdXJjZVJvb3QiOiIvIiwic291cmNlcyI6WyJpbmRleC50cyJdLCJzb3VyY2VzQ29udGVudCI6W251bGxdfQ==
