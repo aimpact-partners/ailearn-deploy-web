@@ -12,18 +12,10 @@ System.register([], function (_export, _context) {
           "supported": ["en", "es"]
         },
         "global.css": true,
-        "params": {
-          "openia": {
-            "key": "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"
-          },
-          "elevenlabs": {
-            "key": "ebe05ca0a4d9aafb4024d0666471a0c7",
-            "id": "pNInz6obpgDQGcFmaJgB"
-          }
-        },
+        "params": {},
         "ssr": {},
         "backend": {
-          "host": "wss://ws.dev.backend.aimpact.partners"
+          "host": "wss://aimpact-partners-dev.ue.r.appspot.com"
         }
       });
     }

@@ -19,7 +19,7 @@ System.register(["@beyond-js/kernel@0.1.9/bundle"], function (_export, _context)
     }],
     execute: function () {
       bimport = specifier => {
-        const dependencies = new Map([["@beyond-js/kernel", "0.1.9"], ["@beyond-js/local", "0.1.3"], ["@ffmpeg-installer/ffmpeg", "1.1.0"], ["@types/marked", "4.3.0"], ["@types/pdfmake", "0.2.2"], ["blob", "0.1.0"], ["dotenv", "16.0.3"], ["express", "4.18.2"], ["file-type", "18.4.0"], ["fluent-ffmpeg", "2.1.2"], ["formidable", "2.1.1"], ["marked", "5.0.2"], ["openai", "3.2.1"], ["pdfmake", "0.2.7"], ["puppeteer", "20.2.1"], ["showdown", "2.1.0"], ["socket.io-client", "4.6.1"], ["sqlite", "4.2.0"], ["sqlite3", "5.1.6"], ["@aimpact/backend", "1.0.0"], ["@aimpact/ailearn", "1.0.0"]]);
+        const dependencies = new Map([["@beyond-js/backend", "0.1.5"], ["@beyond-js/kernel", "0.1.9"], ["@beyond-js/local", "0.1.3"], ["@ffmpeg-installer/ffmpeg", "1.1.0"], ["@types/marked", "4.3.0"], ["@types/pdfmake", "0.2.2"], ["blob", "0.1.0"], ["dotenv", "16.0.3"], ["express", "4.18.2"], ["file-type", "18.4.0"], ["fluent-ffmpeg", "2.1.2"], ["formidable", "2.1.1"], ["marked", "5.0.2"], ["openai", "3.2.1"], ["pdfmake", "0.2.7"], ["puppeteer", "20.2.1"], ["showdown", "2.1.0"], ["socket.io-client", "4.6.1"], ["sqlite", "4.2.0"], ["sqlite3", "5.1.6"], ["vhost", "3.0.2"], ["https", "1.0.0"], ["@aimpact/backend", "1.0.0"], ["@aimpact/ailearn", "1.0.0"]]);
         return globalThis.bimport(globalThis.bimport.resolve(specifier, dependencies));
       };
       ({

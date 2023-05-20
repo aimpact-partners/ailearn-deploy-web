@@ -14,7 +14,7 @@ System.register([], function (_export, _context) {
         "global.css": true,
         "layout": "ilearn-layout",
         "params": {
-          "SERVER_URL": "https://dev.backend.aimpact.partners",
+          "SERVER_URL": "https://aimpact-partners-dev.ue.r.appspot.com",
           "elevenlabs": {
             "key": "ebe05ca0a4d9aafb4024d0666471a0c7",
             "id": "pNInz6obpgDQGcFmaJgB"
