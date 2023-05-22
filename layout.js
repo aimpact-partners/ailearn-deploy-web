@@ -1,25 +1,27 @@
-System.register(["@beyond-js/widgets@0.1.4/render", "@beyond-js/kernel@0.1.9/bundle", "react@18.2.0", "@beyond-js/kernel@0.1.9/routing", "@beyond-js/react-18-widgets@0.0.5/hooks", "@aimpact/ailearn@1.0.0/session", "@beyond-js/react-18-widgets@0.0.5/base", "@beyond-js/kernel@0.1.9/styles"], function (_export, _context) {
+System.register(["@beyond-js/widgets@0.1.4/render", "@beyond-js/kernel@0.1.9/bundle", "@beyond-js/react-18-widgets@0.0.5/base", "react@18.2.0", "@beyond-js/react-18-widgets@0.0.5/hooks", "@aimpact/ailearn@1.0.0/session", "@beyond-js/kernel@0.1.9/routing", "@aimpact/ailearn/start", "@beyond-js/kernel@0.1.9/styles"], function (_export, _context) {
   "use strict";
 
-  var dependency_0, dependency_1, dependency_2, dependency_3, dependency_4, dependency_5, dependency_6, dependency_7, bimport, __Bundle, __pkg, ims, Controller, __beyond_pkg, hmr;
+  var dependency_0, dependency_1, dependency_2, dependency_3, dependency_4, dependency_5, dependency_6, dependency_7, dependency_8, bimport, __Bundle, __pkg, ims, Controller, __beyond_pkg, hmr;
   _export("Controller", void 0);
   return {
     setters: [function (_beyondJsWidgets014Render) {
       dependency_0 = _beyondJsWidgets014Render;
     }, function (_beyondJsKernel019Bundle) {
       dependency_1 = _beyondJsKernel019Bundle;
+    }, function (_beyondJsReact18Widgets005Base) {
+      dependency_2 = _beyondJsReact18Widgets005Base;
     }, function (_react2) {
-      dependency_2 = _react2;
-    }, function (_beyondJsKernel019Routing) {
-      dependency_3 = _beyondJsKernel019Routing;
+      dependency_3 = _react2;
     }, function (_beyondJsReact18Widgets005Hooks) {
       dependency_4 = _beyondJsReact18Widgets005Hooks;
     }, function (_aimpactAilearn100Session) {
       dependency_5 = _aimpactAilearn100Session;
-    }, function (_beyondJsReact18Widgets005Base) {
-      dependency_6 = _beyondJsReact18Widgets005Base;
+    }, function (_beyondJsKernel019Routing) {
+      dependency_6 = _beyondJsKernel019Routing;
+    }, function (_aimpactAilearnStart) {
+      dependency_7 = _aimpactAilearnStart;
     }, function (_beyondJsKernel019Styles) {
-      dependency_7 = _beyondJsKernel019Styles;
+      dependency_8 = _beyondJsKernel019Styles;
     }],
     execute: function () {
       bimport = specifier => {
@@ -36,7 +38,7 @@ System.register(["@beyond-js/widgets@0.1.4/render", "@beyond-js/kernel@0.1.9/bun
         "type": "widget"
       }, _context.meta.url).package();
       ;
-      __pkg.dependencies.update([['@beyond-js/widgets/render', dependency_0], ['react', dependency_2], ['@beyond-js/kernel/routing', dependency_3], ['@beyond-js/react-18-widgets/hooks', dependency_4], ['@aimpact/ailearn/session', dependency_5], ['@beyond-js/react-18-widgets/base', dependency_6], ['@beyond-js/kernel/styles', dependency_7]]);
+      __pkg.dependencies.update([['@beyond-js/widgets/render', dependency_0], ['@beyond-js/react-18-widgets/base', dependency_2], ['react', dependency_3], ['@beyond-js/react-18-widgets/hooks', dependency_4], ['@aimpact/ailearn/session', dependency_5], ['@beyond-js/kernel/routing', dependency_6], ['@aimpact/ailearn/wrapper', dependency_7], ['@beyond-js/kernel/styles', dependency_8]]);
       brequire('@beyond-js/widgets/render').widgets.register([{
         "name": "ilearn-layout",
         "vspecifier": "@aimpact/ailearn@1.0.0/layout",
@@ -44,69 +46,11 @@ System.register(["@beyond-js/widgets@0.1.4/render", "@beyond-js/kernel@0.1.9/bun
       }]);
       brequire('@beyond-js/kernel/styles').styles.register('@aimpact/ailearn@1.0.0/layout');
       ims = new Map();
-      /************************
-      INTERNAL MODULE: ./Layout
-      ************************/
-      ims.set('./Layout', {
-        hash: 3679705968,
-        creator: function (require, exports) {
-          "use strict";
-
-          Object.defineProperty(exports, "__esModule", {
-            value: true
-          });
-          exports.default = void 0;
-          var _react = require("react");
-          var _routing = require("@beyond-js/kernel/routing");
-          var _hooks = require("@beyond-js/react-18-widgets/hooks");
-          var _session = require("@aimpact/ailearn/session");
-          const Layout = () => {
-            const [showMenu, setShowMenu] = (0, _react.useState)(false);
-            const [session, setSession] = (0, _react.useState)(_session.sessionWrapper.logged);
-            (0, _hooks.useBinder)([_session.sessionWrapper], () => setSession(_session.sessionWrapper.logged));
-            const toggleMenu = () => setShowMenu(!showMenu);
-            const navigate = pathname => _routing.routing.pushState(pathname);
-            const logout = () => {
-              _session.sessionWrapper.logout();
-              _routing.routing.pushState("/auth");
-            };
-            return _react.default.createElement("div", {
-              className: "layout"
-            }, _react.default.createElement("header", null, _react.default.createElement("div", null, _react.default.createElement("div", {
-              className: "header-title"
-            }, "AI-Clase by BeyondAI"), _session.sessionWrapper.logged ? _react.default.createElement("div", {
-              className: "header-buttons"
-            }, _react.default.createElement("div", {
-              className: "header-button",
-              onClick: () => navigate("/")
-            }, "Actividades"), _react.default.createElement("div", {
-              className: "header-button",
-              onClick: logout
-            }, "Cerrar Session")) : null)), _react.default.createElement("main", null, _react.default.createElement("div", {
-              className: `menu ${showMenu ? "show" : ""}`
-            }, _react.default.createElement(Menu, null)), _react.default.createElement("beyond-layout-children", null)), _react.default.createElement("footer", null, _react.default.createElement(Footer, null)));
-          };
-          const Menu = () => {
-            return _react.default.createElement("div", null, "Menu");
-          };
-          const Footer = () => {
-            return _react.default.createElement("div", null, _react.default.createElement("div", {
-              className: "footer-left"
-            }, "@copyright AImpact 2023"), _react.default.createElement("div", {
-              className: "footer-right"
-            }, "Powered by beyond-js (www.beyondjs.com)"));
-          };
-          var _default = Layout;
-          exports.default = _default;
-        }
-      });
-
       /***********************
       INTERNAL MODULE: ./index
       ***********************/
-
       ims.set('./index', {
-        hash: 2332500762,
+        hash: 3891080881,
         creator: function (require, exports) {
           "use strict";
 
@@ -115,14 +59,148 @@ System.register(["@beyond-js/widgets@0.1.4/render", "@beyond-js/kernel@0.1.9/bun
           });
           exports.Controller = void 0;
           var _base = require("@beyond-js/react-18-widgets/base");
-          var _Layout = require("./Layout");
+          var _layout = require("./view/layout");
           /*bundle*/
           class Controller extends _base.ReactWidgetController {
             get Widget() {
-              return _Layout.default;
+              return _layout.default;
             }
           }
           exports.Controller = Controller;
+        }
+      });
+
+      /*****************************
+      INTERNAL MODULE: ./view/footer
+      *****************************/
+
+      ims.set('./view/footer', {
+        hash: 668203473,
+        creator: function (require, exports) {
+          "use strict";
+
+          Object.defineProperty(exports, "__esModule", {
+            value: true
+          });
+          exports.Footer = void 0;
+          var _react = require("react");
+          const Footer = () => {
+            return _react.default.createElement("div", null, _react.default.createElement("div", {
+              className: "footer-left"
+            }, "@copyright AImpact 2023"), _react.default.createElement("div", {
+              className: "footer-right"
+            }, "Powered by beyond-js (www.beyondjs.com)"));
+          };
+          exports.Footer = Footer;
+        }
+      });
+
+      /*****************************
+      INTERNAL MODULE: ./view/layout
+      *****************************/
+
+      ims.set('./view/layout', {
+        hash: 4067840951,
+        creator: function (require, exports) {
+          "use strict";
+
+          Object.defineProperty(exports, "__esModule", {
+            value: true
+          });
+          exports.default = void 0;
+          var _react = require("react");
+          var _hooks = require("@beyond-js/react-18-widgets/hooks");
+          var _session = require("@aimpact/ailearn/session");
+          var _footer = require("./footer");
+          var _menu = require("./menu");
+          var _navbarMenu = require("./navbar-menu");
+          const Layout = () => {
+            const [showMenu, setShowMenu] = (0, _react.useState)(false);
+            const [session, setSession] = (0, _react.useState)(_session.sessionWrapper.logged);
+            (0, _hooks.useBinder)([_session.sessionWrapper], () => setSession(_session.sessionWrapper.logged));
+            const toggleMenu = () => setShowMenu(!showMenu);
+            return _react.default.createElement("div", {
+              className: "layout"
+            }, _react.default.createElement("header", null, _react.default.createElement("div", null, _react.default.createElement("div", {
+              className: "header-title"
+            }, "AI-Clase by BeyondAI"), _react.default.createElement(_navbarMenu.NavbarMenu, null))), _react.default.createElement("main", null, _react.default.createElement("div", {
+              className: `menu ${showMenu ? 'show' : ''}`
+            }, _react.default.createElement(_menu.Menu, null)), _react.default.createElement("beyond-layout-children", null)), _react.default.createElement("footer", null, _react.default.createElement(_footer.Footer, null)));
+          };
+          var _default = Layout;
+          exports.default = _default;
+        }
+      });
+
+      /***************************
+      INTERNAL MODULE: ./view/menu
+      ***************************/
+
+      ims.set('./view/menu', {
+        hash: 4113472444,
+        creator: function (require, exports) {
+          "use strict";
+
+          Object.defineProperty(exports, "__esModule", {
+            value: true
+          });
+          exports.Menu = void 0;
+          var _react = require("react");
+          const Menu = () => {
+            return _react.default.createElement("div", null, "Menu");
+          };
+          exports.Menu = Menu;
+        }
+      });
+
+      /**********************************
+      INTERNAL MODULE: ./view/navbar-menu
+      **********************************/
+
+      ims.set('./view/navbar-menu', {
+        hash: 111204186,
+        creator: function (require, exports) {
+          "use strict";
+
+          Object.defineProperty(exports, "__esModule", {
+            value: true
+          });
+          exports.NavbarMenu = NavbarMenu;
+          var React = require("react");
+          var _routing = require("@beyond-js/kernel/routing");
+          var _hooks = require("@beyond-js/react-18-widgets/hooks");
+          var _wrapper = require("@aimpact/ailearn/wrapper");
+          var _session = require("@aimpact/ailearn/session");
+          function NavbarMenu() {
+            const navigate = pathname => _routing.routing.pushState(pathname);
+            const logout = () => {
+              _session.sessionWrapper.logout();
+              _routing.routing.pushState('/auth');
+            };
+            const admin = () => {
+              _wrapper.wrapper.isUpdating = true;
+            };
+            const uri = _routing.routing.uri.uri;
+            const [inAssigments, setInAssigments] = React.useState(uri.includes('assignments'));
+            (0, _hooks.useBinder)([_routing.routing], () => {
+              const uri = _routing.routing.uri.uri;
+              setInAssigments(uri.includes('assignments'));
+              console.log('inAssigments', uri.includes('assignments'));
+            });
+            if (!_session.sessionWrapper.logged) return null;
+            return React.createElement("div", {
+              className: "header-buttons"
+            }, inAssigments && React.createElement("a", {
+              className: "header-button",
+              onClick: admin
+            }, "Admin Mission"), React.createElement("a", {
+              className: "header-button",
+              onClick: () => navigate('/')
+            }, "Actividades"), React.createElement("a", {
+              className: "header-button",
+              onClick: logout
+            }, "Cerrar Session"));
+          }
         }
       });
       __pkg.exports.descriptor = [{
@@ -147,4 +225,4 @@ System.register(["@beyond-js/widgets@0.1.4/render", "@beyond-js/kernel@0.1.9/bun
     }
   };
 });
-//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OztVQUFBO1VBQ0E7VUFDQTtVQUNBO1VBRUEsTUFBTUEsTUFBTSxHQUFhLE1BQUs7WUFDNUIsTUFBTSxDQUFDQyxRQUFRLEVBQUVDLFdBQVcsQ0FBQyxHQUFHLG1CQUFRLEVBQUMsS0FBSyxDQUFDO1lBQy9DLE1BQU0sQ0FBQ0MsT0FBTyxFQUFFQyxVQUFVLENBQUMsR0FBRyxtQkFBUSxFQUFDQyx1QkFBYyxDQUFDQyxNQUFNLENBQUM7WUFFN0Qsb0JBQVMsRUFBQyxDQUFDRCx1QkFBYyxDQUFDLEVBQUUsTUFBTUQsVUFBVSxDQUFDQyx1QkFBYyxDQUFDQyxNQUFNLENBQUMsQ0FBQztZQUNwRSxNQUFNQyxVQUFVLEdBQUcsTUFBTUwsV0FBVyxDQUFDLENBQUNELFFBQVEsQ0FBQztZQUMvQyxNQUFNTyxRQUFRLEdBQUlDLFFBQWdCLElBQUtDLGdCQUFPLENBQUNDLFNBQVMsQ0FBQ0YsUUFBUSxDQUFDO1lBQ2xFLE1BQU1HLE1BQU0sR0FBRyxNQUFLO2NBQ2xCUCx1QkFBYyxDQUFDTyxNQUFNLEVBQUU7Y0FDdkJGLGdCQUFPLENBQUNDLFNBQVMsQ0FBQyxPQUFPLENBQUM7WUFDNUIsQ0FBQztZQUVELE9BQ0VFO2NBQUtDLFNBQVMsRUFBQztZQUFRLEdBQ3JCRCw2Q0FDRUEsMENBQ0VBO2NBQUtDLFNBQVMsRUFBQztZQUFjLDBCQUEyQixFQUN2RFQsdUJBQWMsQ0FBQ0MsTUFBTSxHQUNwQk87Y0FBS0MsU0FBUyxFQUFDO1lBQWdCLEdBQzdCRDtjQUFLQyxTQUFTLEVBQUMsZUFBZTtjQUFDQyxPQUFPLEVBQUUsTUFBTVAsUUFBUSxDQUFDLEdBQUc7WUFBQyxpQkFFckQsRUFDTks7Y0FBS0MsU0FBUyxFQUFDLGVBQWU7Y0FBQ0MsT0FBTyxFQUFFSDtZQUFNLG9CQUV4QyxDQUNGLEdBQ0osSUFBSSxDQUNKLENBQ0MsRUFDVEMsMkNBQ0VBO2NBQUtDLFNBQVMsRUFBRSxRQUFRYixRQUFRLEdBQUcsTUFBTSxHQUFHLEVBQUU7WUFBRSxHQUM5Q1ksNkJBQUNHLElBQUksT0FBRyxDQUNKLEVBQ05ILDREQUEwQixDQUNyQixFQUNQQSw2Q0FDRUEsNkJBQUNJLE1BQU0sT0FBRyxDQUNILENBQ0w7VUFFVixDQUFDO1VBRUQsTUFBTUQsSUFBSSxHQUFhLE1BQUs7WUFDMUIsT0FBT0gsaURBQWU7VUFDeEIsQ0FBQztVQUVELE1BQU1JLE1BQU0sR0FBYSxNQUFLO1lBQzVCLE9BQ0VKLDBDQUNFQTtjQUFLQyxTQUFTLEVBQUM7WUFBYSw2QkFBOEIsRUFDMUREO2NBQUtDLFNBQVMsRUFBQztZQUFjLDZDQUE4QyxDQUN2RTtVQUVWLENBQUM7VUFBQyxlQUVhZCxNQUFNO1VBQUFrQjs7Ozs7Ozs7Ozs7Ozs7Ozs7VUM1RHJCO1VBQ0E7VUFFTztVQUFVLE1BQ1hDLFVBQVcsU0FBUUMsMkJBQXFCO1lBQzVDLElBQUlDLE1BQU07Y0FDUixPQUFPckIsZUFBTTtZQUNmOztVQUNEa0IiLCJuYW1lcyI6WyJMYXlvdXQiLCJzaG93TWVudSIsInNldFNob3dNZW51Iiwic2Vzc2lvbiIsInNldFNlc3Npb24iLCJzZXNzaW9uV3JhcHBlciIsImxvZ2dlZCIsInRvZ2dsZU1lbnUiLCJuYXZpZ2F0ZSIsInBhdGhuYW1lIiwicm91dGluZyIsInB1c2hTdGF0ZSIsImxvZ291dCIsIlJlYWN0IiwiY2xhc3NOYW1lIiwib25DbGljayIsIk1lbnUiLCJGb290ZXIiLCJleHBvcnRzIiwiQ29udHJvbGxlciIsIlJlYWN0V2lkZ2V0Q29udHJvbGxlciIsIldpZGdldCJdLCJzb3VyY2VSb290IjoiLyIsInNvdXJjZXMiOlsiTGF5b3V0LnRzeCIsImluZGV4LnRzIl0sInNvdXJjZXNDb250ZW50IjpbbnVsbCxudWxsXX0=
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,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LElBQUk7WUFDdkMsT0FDQ1A7Y0FBS0MsU0FBUyxFQUFDO1lBQWdCLEdBQzdCbUIsWUFBWSxJQUNacEI7Y0FBR0MsU0FBUyxFQUFDLGVBQWU7Y0FBQ3lCLE9BQU8sRUFBRVY7WUFBSyxtQkFHM0MsRUFDRGhCO2NBQUdDLFNBQVMsRUFBQyxlQUFlO2NBQUN5QixPQUFPLEVBQUUsTUFBTWYsUUFBUSxDQUFDLEdBQUc7WUFBQyxpQkFFckQsRUFDSlg7Y0FBR0MsU0FBUyxFQUFDLGVBQWU7Y0FBQ3lCLE9BQU8sRUFBRVg7WUFBTSxvQkFFeEMsQ0FDQztVQUVSIiwibmFtZXMiOlsiQ29udHJvbGxlciIsIlJlYWN0V2lkZ2V0Q29udHJvbGxlciIsIldpZGdldCIsIkxheW91dCIsImV4cG9ydHMiLCJGb290ZXIiLCJSZWFjdCIsImNsYXNzTmFtZSIsInNob3dNZW51Iiwic2V0U2hvd01lbnUiLCJzZXNzaW9uIiwic2V0U2Vzc2lvbiIsInNlc3Npb25XcmFwcGVyIiwibG9nZ2VkIiwidG9nZ2xlTWVudSIsIk5hdmJhck1lbnUiLCJNZW51IiwibmF2aWdhdGUiLCJwYXRobmFtZSIsInJvdXRpbmciLCJwdXNoU3RhdGUiLCJsb2dvdXQiLCJhZG1pbiIsIndyYXBwZXIiLCJpc1VwZGF0aW5nIiwidXJpIiwiaW5Bc3NpZ21lbnRzIiwic2V0SW5Bc3NpZ21lbnRzIiwidXNlU3RhdGUiLCJpbmNsdWRlcyIsImNvbnNvbGUiLCJsb2ciLCJvbkNsaWNrIl0sInNvdXJjZVJvb3QiOiIvIiwic291cmNlcyI6WyJpbmRleC50cyIsInZpZXcvZm9vdGVyLnRzeCIsInZpZXcvbGF5b3V0LnRzeCIsInZpZXcvbWVudS50c3giLCJ2aWV3L25hdmJhci1tZW51LnRzeCJdLCJzb3VyY2VzQ29udGVudCI6W251bGwsbnVsbCxudWxsLG51bGwsbnVsbF19

@@ -1,7 +1,7 @@
-System.register(["@beyond-js/kernel@0.1.9/bundle", "@beyond-js/kernel@0.1.9/transversals", "@beyond-js/widgets@0.1.4/render", "@beyond-js/reactive-2@1.0.0/database", "@aimpact/ailearn@1.0.0/prompt-models", "@aimpact/ailearn@1.0.0/assignments", "@beyond-js/kernel@0.1.9/routing"], function (_export, _context) {
+System.register(["@beyond-js/kernel@0.1.9/bundle", "@beyond-js/kernel@0.1.9/transversals", "@beyond-js/widgets@0.1.4/render", "@beyond-js/reactive-2@1.0.0/database", "@aimpact/ailearn@1.0.0/prompt-models", "@aimpact/ailearn@1.0.0/assignments", "@beyond-js/kernel@0.1.9/routing", "@beyond-js/reactive-2@1.0.0/model"], function (_export, _context) {
   "use strict";
 
-  var dependency_0, dependency_1, dependency_2, dependency_3, dependency_4, dependency_5, dependency_6, Transversal, __beyond_transversal, widgets, bundles;
+  var dependency_0, dependency_1, dependency_2, dependency_3, dependency_4, dependency_5, dependency_6, dependency_7, Transversal, __beyond_transversal, widgets, bundles;
   return {
     setters: [function (_beyondJsKernel019Bundle) {
       dependency_0 = _beyondJsKernel019Bundle;
@@ -17,13 +17,15 @@ System.register(["@beyond-js/kernel@0.1.9/bundle", "@beyond-js/kernel@0.1.9/tran
       dependency_5 = _aimpactAilearn100Assignments;
     }, function (_beyondJsKernel019Routing) {
       dependency_6 = _beyondJsKernel019Routing;
+    }, function (_beyondJsReactive2100Model) {
+      dependency_7 = _beyondJsReactive2100Model;
     }],
     execute: function () {
       ({
         Transversal
       } = brequire('@beyond-js/kernel/transversals'));
       _export("__beyond_transversal", __beyond_transversal = new Transversal('start', ''));
-      __beyond_transversal.dependencies.update([['@beyond-js/kernel/transversals', dependency_1], ['@beyond-js/widgets/render', dependency_2], ['@beyond-js/reactive-2/database', dependency_3], ['@aimpact/ailearn/prompt-models', dependency_4], ['@aimpact/ailearn/assignments', dependency_5], ['@beyond-js/kernel/routing', dependency_6]]);
+      __beyond_transversal.dependencies.update([['@beyond-js/kernel/transversals', dependency_1], ['@beyond-js/widgets/render', dependency_2], ['@beyond-js/reactive-2/database', dependency_3], ['@aimpact/ailearn/prompt-models', dependency_4], ['@aimpact/ailearn/assignments', dependency_5], ['@beyond-js/kernel/routing', dependency_6], ['@beyond-js/reactive-2/model', dependency_7]]);
 
       /*************
       BUNDLE: WIDGET
@@ -59,11 +61,6 @@ System.register(["@beyond-js/kernel@0.1.9/bundle", "@beyond-js/kernel@0.1.9/tran
         "name": "ilearn-layout",
         "vspecifier": "@aimpact/ailearn@1.0.0/layout",
         "is": "layout"
-      }, {
-        "name": "login-page",
-        "vspecifier": "@aimpact/ailearn@1.0.0/login",
-        "is": "page",
-        "route": "/login"
       }, {
         "name": "test-p",
         "vspecifier": "@aimpact/ailearn@1.0.0/test",
@@ -176,7 +173,7 @@ System.register(["@beyond-js/kernel@0.1.9/bundle", "@beyond-js/kernel@0.1.9/tran
         ***********************/
 
         ims.set('./start', {
-          hash: 2971878198,
+          hash: 3697050225,
           creator: function (require, exports) {
             "use strict";
 
@@ -185,8 +182,9 @@ System.register(["@beyond-js/kernel@0.1.9/bundle", "@beyond-js/kernel@0.1.9/tran
             });
             exports.wrapper = exports.Wrapper = void 0;
             var _promptModels = require("@aimpact/ailearn/prompt-models");
+            var _model = require("@beyond-js/reactive-2/model");
             /*bundle*/
-            class Wrapper {
+            class Wrapper extends _model.ReactiveModel {
               #collection;
               get collection() {
                 return this.#collection;
@@ -195,12 +193,15 @@ System.register(["@beyond-js/kernel@0.1.9/bundle", "@beyond-js/kernel@0.1.9/tran
                 return this.#collection.localProvider?.items;
               }
               getByName(name) {
-                const found = this.items.find(item => item.name === name);
+                const found = this.#collection.items.find(item => item.name === name);
                 return found;
               }
               constructor() {
+                super();
                 this.#collection = new _promptModels.Prompts();
                 this.#collection.load();
+                //@ts-ignore
+                this.reactiveProps(["isUpdating"]);
               }
             }
             exports.Wrapper = Wrapper;
@@ -220,7 +221,7 @@ System.register(["@beyond-js/kernel@0.1.9/bundle", "@beyond-js/kernel@0.1.9/tran
           "name": "wrapper"
         }];
         return {
-          dependencies: ['@aimpact/ailearn/prompt-models']
+          dependencies: ['@aimpact/ailearn/prompt-models', '@beyond-js/reactive-2/model']
         };
       }]);
       __beyond_transversal.initialise(bundles);

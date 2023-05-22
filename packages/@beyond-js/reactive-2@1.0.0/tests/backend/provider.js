@@ -15,7 +15,7 @@ System.register(["@beyond-js/backend@0.1.5/client", "@beyond-js/kernel@0.1.9/bun
     }],
     execute: function () {
       bimport = specifier => {
-        const dependencies = new Map([["@beyond-js/events", "0.0.6"], ["dexie", "3.2.3"], ["@beyond-js/kernel", "0.1.9"], ["@beyond-js/local", "0.1.3"], ["@beyond-js/react-18-widgets", "0.0.5"], ["ajv", "8.12.0"], ["@beyond-js/backend", "0.1.5"], ["socket.io-client", "4.6.1"], ["@beyond-js/reactive-2", "1.0.0"], ["@aimpact/ailearn", "1.0.0"]]);
+        const dependencies = new Map([["@beyond-js/events", "0.0.6"], ["dexie", "3.2.3"], ["@beyond-js/kernel", "0.1.9"], ["@beyond-js/local", "0.1.3"], ["@beyond-js/react-18-widgets", "0.0.5"], ["@beyond-js/backend", "0.1.5"], ["socket.io-client", "4.6.1"], ["@beyond-js/reactive-2", "1.0.0"], ["@aimpact/ailearn", "1.0.0"]]);
         return globalThis.bimport(globalThis.bimport.resolve(specifier, dependencies));
       };
       ({
@@ -113,7 +113,7 @@ System.register(["@beyond-js/backend@0.1.5/client", "@beyond-js/kernel@0.1.9/bun
       *****************************/
 
       ims.set('./users/index', {
-        hash: 1185801845,
+        hash: 889818761,
         creator: function (require, exports) {
           "use strict";
 
