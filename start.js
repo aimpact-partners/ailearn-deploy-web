@@ -178,7 +178,7 @@ System.register(["@beyond-js/kernel@0.1.9/bundle", "@beyond-js/kernel@0.1.9/tran
         ***********************/
 
         ims.set('./start', {
-          hash: 915508931,
+          hash: 161744366,
           creator: function (require, exports) {
             "use strict";
 
@@ -218,7 +218,6 @@ System.register(["@beyond-js/kernel@0.1.9/bundle", "@beyond-js/kernel@0.1.9/tran
                 this.#collection.load();
                 //@ts-ignore
                 this.reactiveProps(["isUpdating"]);
-                console.log(this.#collection);
               }
             }
             exports.Wrapper = Wrapper;
