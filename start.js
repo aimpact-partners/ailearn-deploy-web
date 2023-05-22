@@ -133,11 +133,12 @@ System.register(["@beyond-js/kernel@0.1.9/bundle", "@beyond-js/kernel@0.1.9/tran
         *************************/
 
         ims.set('./routing', {
-          hash: 3896769427,
+          hash: 4235197823,
           creator: function (require, exports) {
             "use strict";
 
             var _routing = require("@beyond-js/kernel/routing");
+            var _wrapper = require("@aimpact/ailearn/wrapper");
             _routing.routing.redirect = async function redirect(uri) {
               if (!localStorage.getItem("session")) {
                 return "/auth";
@@ -145,12 +146,16 @@ System.register(["@beyond-js/kernel@0.1.9/bundle", "@beyond-js/kernel@0.1.9/tran
               if (uri.pathname === "/auth" && !!localStorage.getItem("session")) {
                 return "/";
               }
+              /**
+               * update the prompt edit variable if any navigation is performed, the editing form is a bundle code
+               */
+              _wrapper.wrapper.isUpdating = false;
               return uri.pathname;
             };
           }
         });
         return {
-          dependencies: ['@beyond-js/kernel/routing']
+          dependencies: ['@beyond-js/kernel/routing', '@aimpact/ailearn/wrapper']
         };
       }]);
 
@@ -173,7 +178,7 @@ System.register(["@beyond-js/kernel@0.1.9/bundle", "@beyond-js/kernel@0.1.9/tran
         ***********************/
 
         ims.set('./start', {
-          hash: 3697050225,
+          hash: 915508931,
           creator: function (require, exports) {
             "use strict";
 
@@ -189,12 +194,23 @@ System.register(["@beyond-js/kernel@0.1.9/bundle", "@beyond-js/kernel@0.1.9/tran
               get collection() {
                 return this.#collection;
               }
+              #items = new Map();
               get items() {
                 return this.#collection.localProvider?.items;
               }
               getByName(name) {
-                const found = this.#collection.items.find(item => item.name === name);
-                return found;
+                const found = this.#collection.localProvider.items.find(item => item.name === name);
+                if (!found) {
+                  console.error(`Item ${name} not found`);
+                  return;
+                }
+                if (this.#items.has(found.id)) {
+                  return this.#items.get(found.id);
+                }
+                const item = new _promptModels.Prompt(found.id);
+                item.load();
+                this.#items.set(found, item);
+                return item;
               }
               constructor() {
                 super();
@@ -202,6 +218,7 @@ System.register(["@beyond-js/kernel@0.1.9/bundle", "@beyond-js/kernel@0.1.9/tran
                 this.#collection.load();
                 //@ts-ignore
                 this.reactiveProps(["isUpdating"]);
+                console.log(this.#collection);
               }
             }
             exports.Wrapper = Wrapper;

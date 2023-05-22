@@ -1,7 +1,7 @@
-System.register(["@beyond-js/kernel@0.1.9/bundle", "react@18.2.0", "@aimpact/ailearn@1.0.0/prompt-models", "@beyond-js/react-18-widgets@0.0.5/hooks", "@bgroup/ui@0.0.34/form", "@beyond-js/kernel@0.1.9/styles"], function (_export, _context) {
+System.register(["@beyond-js/kernel@0.1.9/bundle", "react@18.2.0", "@aimpact/ailearn@1.0.0/prompt-models", "@beyond-js/react-18-widgets@0.0.5/hooks", "@bgroup/ui@0.0.34/form", "@aimpact/ailearn/start", "@beyond-js/kernel@0.1.9/styles"], function (_export, _context) {
   "use strict";
 
-  var dependency_0, dependency_1, dependency_2, dependency_3, dependency_4, dependency_5, bimport, __Bundle, __pkg, ims, PromptEdit, __beyond_pkg, hmr;
+  var dependency_0, dependency_1, dependency_2, dependency_3, dependency_4, dependency_5, dependency_6, bimport, __Bundle, __pkg, ims, PromptEdit, __beyond_pkg, hmr;
   _export("PromptEdit", void 0);
   return {
     setters: [function (_beyondJsKernel019Bundle) {
@@ -14,8 +14,10 @@ System.register(["@beyond-js/kernel@0.1.9/bundle", "react@18.2.0", "@aimpact/ail
       dependency_3 = _beyondJsReact18Widgets005Hooks;
     }, function (_bgroupUi0034Form) {
       dependency_4 = _bgroupUi0034Form;
+    }, function (_aimpactAilearnStart) {
+      dependency_5 = _aimpactAilearnStart;
     }, function (_beyondJsKernel019Styles) {
-      dependency_5 = _beyondJsKernel019Styles;
+      dependency_6 = _beyondJsKernel019Styles;
     }],
     execute: function () {
       bimport = specifier => {
@@ -32,14 +34,14 @@ System.register(["@beyond-js/kernel@0.1.9/bundle", "react@18.2.0", "@aimpact/ail
         "type": "code"
       }, _context.meta.url).package();
       ;
-      __pkg.dependencies.update([['react', dependency_1], ['@aimpact/ailearn/prompt-models', dependency_2], ['@beyond-js/react-18-widgets/hooks', dependency_3], ['@bgroup/ui/form', dependency_4], ['@beyond-js/kernel/styles', dependency_5]]);
+      __pkg.dependencies.update([['react', dependency_1], ['@aimpact/ailearn/prompt-models', dependency_2], ['@beyond-js/react-18-widgets/hooks', dependency_3], ['@bgroup/ui/form', dependency_4], ['@aimpact/ailearn/wrapper', dependency_5], ['@beyond-js/kernel/styles', dependency_6]]);
       brequire('@beyond-js/kernel/styles').styles.register('@aimpact/ailearn@1.0.0/prompts/edit');
       ims = new Map();
       /*************************
       INTERNAL MODULE: ./control
       *************************/
       ims.set('./control', {
-        hash: 3139732827,
+        hash: 3136973249,
         creator: function (require, exports) {
           "use strict";
 
@@ -49,12 +51,12 @@ System.register(["@beyond-js/kernel@0.1.9/bundle", "react@18.2.0", "@aimpact/ail
           exports.PromptEdit = PromptEdit;
           var React = require("react");
           var _form = require("@bgroup/ui/form");
+          var _wrapper = require("@aimpact/ailearn/wrapper");
           /*bundle*/
           function PromptEdit({
             prompt
           }) {
             const [ready, setReady] = React.useState(prompt.loaded);
-            console.log(10, PerformancePaintTiming);
             // useBinder([prompt], () => {
             // 	setReady(prompt.landed);
             // 	setGoals(prompt.goals);
@@ -68,11 +70,12 @@ System.register(["@beyond-js/kernel@0.1.9/bundle", "react@18.2.0", "@aimpact/ail
             const handleGoals = event => setGoals(event.target.value);
             const handleSubmit = async event => {
               event.preventDefault();
-              console.log(1, prompt);
               await prompt.save({
+                id: prompt.id,
                 goals: goals,
                 mission: mission
               });
+              _wrapper.wrapper.isUpdating = false;
               toggleEdition();
             };
             const text = React.createElement(React.Fragment, null, React.createElement("h4", null, "Mission"), React.createElement("div", {
@@ -137,4 +140,4 @@ System.register(["@beyond-js/kernel@0.1.9/bundle", "react@18.2.0", "@aimpact/ail
     }
   };
 });
-//# sourceMappingURL=data:application/json;charset=utf-8;base64,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YTtjQUFDTyxPQUFPLEVBQUVqQjtZQUFhLFVBRTdDLENBRVosQ0FDRztVQUVWIiwibmFtZXMiOlsiUHJvbXB0RWRpdCIsInByb21wdCIsInJlYWR5Iiwic2V0UmVhZHkiLCJSZWFjdCIsInVzZVN0YXRlIiwibG9hZGVkIiwiY29uc29sZSIsImxvZyIsIlBlcmZvcm1hbmNlUGFpbnRUaW1pbmciLCJlZGl0aW9uIiwic2V0SXNFZGl0TW9kZSIsIm1pc3Npb24iLCJzZXRNaXNzaW9uIiwiZ29hbHMiLCJzZXRHb2FscyIsInRvZ2dsZUVkaXRpb24iLCJoYW5kbGVNaXNzaW9uIiwiZXZlbnQiLCJ0YXJnZXQiLCJ2YWx1ZSIsImhhbmRsZUdvYWxzIiwiaGFuZGxlU3VibWl0IiwicHJldmVudERlZmF1bHQiLCJzYXZlIiwidGV4dCIsImNsYXNzTmFtZSIsImZvcm0iLCJCZXlvbmRGb3JtIiwib25TdWJtaXQiLCJodG1sRm9yIiwib25DaGFuZ2UiLCJ0eXBlIiwib25DbGljayIsIm5hbWUiXSwic291cmNlUm9vdCI6Ii8iLCJzb3VyY2VzIjpbImNvZGUvdHMvY29udHJvbC50c3giXSwic291cmNlc0NvbnRlbnQiOltudWxsXX0=
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,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WUFBYSxVQUU3QyxDQUVaLENBQ0c7VUFFViIsIm5hbWVzIjpbIlByb21wdEVkaXQiLCJwcm9tcHQiLCJyZWFkeSIsInNldFJlYWR5IiwiUmVhY3QiLCJ1c2VTdGF0ZSIsImxvYWRlZCIsImVkaXRpb24iLCJzZXRJc0VkaXRNb2RlIiwibWlzc2lvbiIsInNldE1pc3Npb24iLCJnb2FscyIsInNldEdvYWxzIiwidG9nZ2xlRWRpdGlvbiIsImhhbmRsZU1pc3Npb24iLCJldmVudCIsInRhcmdldCIsInZhbHVlIiwiaGFuZGxlR29hbHMiLCJoYW5kbGVTdWJtaXQiLCJwcmV2ZW50RGVmYXVsdCIsInNhdmUiLCJpZCIsIndyYXBwZXIiLCJpc1VwZGF0aW5nIiwidGV4dCIsImNsYXNzTmFtZSIsImZvcm0iLCJCZXlvbmRGb3JtIiwib25TdWJtaXQiLCJodG1sRm9yIiwib25DaGFuZ2UiLCJ0eXBlIiwib25DbGljayIsIm5hbWUiXSwic291cmNlUm9vdCI6Ii8iLCJzb3VyY2VzIjpbImNvZGUvdHMvY29udHJvbC50c3giXSwic291cmNlc0NvbnRlbnQiOltudWxsXX0=

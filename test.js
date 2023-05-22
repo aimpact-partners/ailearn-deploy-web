@@ -1,4 +1,4 @@
-System.register(["@beyond-js/widgets@0.1.4/render", "@beyond-js/kernel@0.1.9/bundle", "@beyond-js/react-18-widgets@0.0.5/page", "react@18.2.0", "@aimpact/ailearn@1.0.0/prompts/code", "@aimpact/ailearn/start"], function (_export, _context) {
+System.register(["@beyond-js/widgets@0.1.4/render", "@beyond-js/kernel@0.1.9/bundle", "@beyond-js/react-18-widgets@0.0.5/page", "react@18.2.0", "@aimpact/ailearn@1.0.0/prompts/edit", "@aimpact/ailearn/start"], function (_export, _context) {
   "use strict";
 
   var dependency_0, dependency_1, dependency_2, dependency_3, dependency_4, dependency_5, bimport, __Bundle, __pkg, ims, Controller, View, __beyond_pkg, hmr;
@@ -15,8 +15,8 @@ System.register(["@beyond-js/widgets@0.1.4/render", "@beyond-js/kernel@0.1.9/bun
       dependency_2 = _beyondJsReact18Widgets005Page;
     }, function (_react) {
       dependency_3 = _react;
-    }, function (_aimpactAilearn100PromptsCode) {
-      dependency_4 = _aimpactAilearn100PromptsCode;
+    }, function (_aimpactAilearn100PromptsEdit) {
+      dependency_4 = _aimpactAilearn100PromptsEdit;
     }, function (_aimpactAilearnStart) {
       dependency_5 = _aimpactAilearnStart;
     }],
@@ -35,7 +35,7 @@ System.register(["@beyond-js/widgets@0.1.4/render", "@beyond-js/kernel@0.1.9/bun
         "type": "widget"
       }, _context.meta.url).package();
       ;
-      __pkg.dependencies.update([['@beyond-js/widgets/render', dependency_0], ['@beyond-js/react-18-widgets/page', dependency_2], ['react', dependency_3], ['@aimpact/ailearn/prompts/code', dependency_4], ['@aimpact/ailearn/wrapper', dependency_5]]);
+      __pkg.dependencies.update([['@beyond-js/widgets/render', dependency_0], ['@beyond-js/react-18-widgets/page', dependency_2], ['react', dependency_3], ['@aimpact/ailearn/prompts/edit', dependency_4], ['@aimpact/ailearn/wrapper', dependency_5]]);
       brequire('@beyond-js/widgets/render').widgets.register([{
         "name": "test-p",
         "vspecifier": "@aimpact/ailearn@1.0.0/test",
@@ -72,7 +72,7 @@ System.register(["@beyond-js/widgets@0.1.4/render", "@beyond-js/kernel@0.1.9/bun
       *****************************/
 
       ims.set('./views/index', {
-        hash: 986685528,
+        hash: 416592220,
         creator: function (require, exports) {
           "use strict";
 
@@ -81,12 +81,12 @@ System.register(["@beyond-js/widgets@0.1.4/render", "@beyond-js/kernel@0.1.9/bun
           });
           exports.View = View;
           var React = require("react");
-          var _code = require("@aimpact/ailearn/prompts/code");
+          var _edit = require("@aimpact/ailearn/prompts/edit");
           var _wrapper = require("@aimpact/ailearn/wrapper");
           /*bundle*/
           function View() {
             const item = _wrapper.wrapper.getByName("prueba");
-            return React.createElement(React.Fragment, null, React.createElement("h2", null, "test"), (0, _code.promptForm)(item.id));
+            return React.createElement(React.Fragment, null, React.createElement("h2", null, "test"), (0, _edit.promptForm)(item.id));
           }
         }
       });

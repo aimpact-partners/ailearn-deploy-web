@@ -62,7 +62,7 @@ System.register(["@beyond-js/kernel@0.1.9/bundle", "@beyond-js/reactive-2@1.0.0/
       **********************/
 
       ims.set('./item', {
-        hash: 3788162555,
+        hash: 1626711185,
         creator: function (require, exports) {
           "use strict";
 
