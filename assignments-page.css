@@ -1,25 +1,24 @@
-assignments-page {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 10px;
-}
-
 .assignment-list {
   display: flex;
-  flex-direction: column;
+  flex-flow: row wrap;
   gap: 1rem;
   padding: 1rem;
+  background-color: var(--surface);
+  height: 100%;
 }
 
 .assignment {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+  align-content: flex-start;
+  min-height: 150px;
+  width: 300px;
   gap: 1rem;
   padding: 1rem;
-  border-radius: 0.25rem;
-  background-color: #333333;
+  background-color: var(--secondary-darker);
+  border-radius: var(--border-radius-medium);
+  border: 5px solid var(--secondary-accent);
 }
 
 .assignment-header {
@@ -27,61 +26,42 @@ assignments-page {
   justify-content: space-between;
   align-items: center;
 }
-
 .assignment-header h2 {
-  font-size: 1.5rem;
+  font-size: var(--font-size-base);
   font-weight: bold;
-  color: #ffffff;
   margin: 0;
+  color: var(--primary-light);
 }
 
 .assignment-header button {
   border: none;
   background-color: transparent;
-  font-size: 1.5rem;
-  color: #ffffff;
+  font-size: var(--font-size-lg);
+  color: var(--text-color);
   cursor: pointer;
 }
 
 .assignment-body {
   padding: 0.5rem 0;
-}
-
-.assignment-body p {
-  font-size: 1.2rem;
-  color: #cccccc;
-  margin: 0;
-}
-
-body {
-  background-color: #1a1a1a;
-  color: #ffffff;
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-base);
+  color: var(--text-color);
 }
 
 .button {
   cursor: pointer;
-  border: 1px solid #eee;
+  border: 2.5px groove var(--secondary-light);
   padding: 10px 20px;
-  border-radius: 10px;
-  color: #fff;
+  border-radius: var(--border-radius-medium);
+  font-size: var(--font-size-sm);
+  color: var(--text-color);
   align-self: end;
 }
 
 .button:hover {
-  color: #3ff;
-}
-
-.assignment-list {
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
-}
-
-.assignment {
-  box-shadow: 0 0 5px rgba(255, 255, 255, 0.1);
-}
-
-.assignment a {
-  box-shadow: 0 0 5px rgba(0, 153, 255, 0.5);
+  color: var(--primary-light);
+  border-color: var(--primary-light);
 }
 
 
-/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNjc3NcXHN0eWxlcy5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0U7RUFDQTtFQUNBO0VBQ0E7RUFDQTs7O0FBR0Y7RUFDRTtFQUNBO0VBQ0E7RUFDQTs7O0FBR0Y7RUFDRTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7OztBQUdGO0VBQ0U7RUFDQTtFQUNBOzs7QUFHRjtFQUNFO0VBQ0E7RUFDQTtFQUNBOzs7QUFHRjtFQUNFO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7OztBQUdGO0VBQ0U7OztBQUdGO0VBQ0U7RUFDQTtFQUNBOzs7QUFHRjtFQUNFO0VBQ0E7OztBQUdGO0VBQ0U7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBOzs7QUFHRjtFQUNFOzs7QUFHRjtFQUNFOzs7QUFHRjtFQUNFOzs7QUFHRjtFQUNFIiwiZmlsZSI6IiJ9 */
+/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNjc3NcXHN0eWxlcy5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQU1BO0VBQ0U7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBOzs7QUFHRjtFQUNFO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUF0QkE7RUFDQTtFQUNBOzs7QUF3QkY7RUFDRTtFQUNBO0VBQ0E7O0FBRUE7RUFDRTtFQUNBO0VBQ0E7RUFDQTs7O0FBSUo7RUFDRTtFQUNBO0VBQ0E7RUFDQTtFQUNBOzs7QUFHRjtFQUNFO0VBQ0E7RUFDQTtFQUNBOzs7QUFHRjtFQUNFO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBOzs7QUFHRjtFQUNFO0VBQ0EiLCJmaWxlIjoiIn0= */

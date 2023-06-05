@@ -1,27 +1,55 @@
-.assinment-form-content {
-  display: grid;
+.assignment-form-content {
+  display: flex;
+  flex-flow: column wrap;
+  overflow-x: hidden;
   padding: 30px;
+  margin: 15px 7.5px;
+  background-color: var(--surface);
+  border-radius: var(--border-radius-medium);
+  border: 5px solid var(--secondary-accent);
+  box-shadow: var(--shadow-8);
+  font-size: var(--font-size-base);
 }
-.assinment-form-content textarea {
+.assignment-form-content hr {
   width: 100%;
-  height: 100%;
-  background-color: white;
-  border-radius: var(--border-radius-base);
-  border: 1px solid #333;
+  margin-top: 30px;
+  border-color: var(--primary);
 }
-.assinment-form-content .form-buttons {
-  float: right;
+.assignment-form-content h3,
+.assignment-form-content h2 {
+  color: var(--primary-light);
+}
+.assignment-form-content .field {
+  padding: 15px;
+  background-color: var(--secondary-darker);
+  border-radius: var(--border-radius-medium);
+  border: 5px solid var(--secondary-accent);
+  line-height: var(--line-height-base);
+}
+.assignment-form-content textarea {
+  padding: 15px 5px;
+  width: 100%;
+  background-color: var(--secondary);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-base);
+  color: var(--text-on-secondary);
+  resize: vertical;
+}
+.assignment-form-content .form-buttons {
+  margin-top: 25px;
   text-align: right;
 }
-.assinment-form-content .form-buttons .form-button {
-  display: inline;
+.assignment-form-content .form-buttons .form-button {
   cursor: pointer;
-  padding: 10px;
+  padding: 15px 10px;
   margin-left: 10px;
-  border-radius: 10px;
-  background-color: #ccc;
-  color: #333;
+  min-width: 75px;
+  border-radius: var(--border-radius-base);
+  background-color: var(--secondary-light);
+  color: var(--text-on-primary);
+  border: 3px groove var(--secondary-accent);
+  font-size: var(--font-size-sm);
 }
 
 
-/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImNvZGVcXHNjc3NcXHN0eWxlcy5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0U7RUFDQTs7QUFFQTtFQUNFO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7O0FBRUY7RUFDRTtFQUNBOztBQUVBO0VBQ0U7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0EiLCJmaWxlIjoiIn0= */
+/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImNvZGVcXHNjc3NcXHN0eWxlcy5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0U7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7O0FBRUE7RUFDRTtFQUNBO0VBQ0E7O0FBR0Y7QUFBQTtFQUVFOztBQUdGO0VBQ0U7RUFDQTtFQUNBO0VBQ0E7RUFDQTs7QUFHRjtFQUNFO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBOztBQUVGO0VBQ0U7RUFDQTs7QUFFQTtFQUNFO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQSIsImZpbGUiOiIifQ== */

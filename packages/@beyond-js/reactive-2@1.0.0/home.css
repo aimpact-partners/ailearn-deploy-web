@@ -1,5 +1,4 @@
 .page__container {
-  display: flex;
   padding: 20px;
   max-width: 1024px;
   margin: 20px auto;
@@ -7,8 +6,20 @@
   background: var(--surface);
 }
 .page__container .beyond {
-  color: #FF8056;
+  color: #ff8056;
+}
+.page__container button {
+  background-color: var(--primary);
+  padding: 1rem;
+  border-radius: 8px;
+  border: 1px solid var(--primary);
+  color: var(--text-on-primary);
+  cursor: pointer;
+  transition: all 300ms ease-in-out;
+}
+.page__container button:hover {
+  background-color: var(--primary-dark);
 }
 
 
-/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNhc3NcXHN0eWxlcy5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0U7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBOztBQUVBO0VBQ0UiLCJmaWxlIjoiIn0= */
+/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNhc3NcXHN0eWxlcy5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0M7RUFDQTtFQUNBO0VBQ0E7RUFDQTs7QUFFQTtFQUNDOztBQUdEO0VBQ0M7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7O0FBQ0E7RUFDQyIsImZpbGUiOiIifQ== */

@@ -3,19 +3,16 @@
   flex-direction: column;
   width: 100%;
   height: 100%;
-  color: #ddd;
-  background-color: #131313;
+  background-color: var(--surface);
 }
 .assistant .messages {
   position: relative;
   padding: 10px 20px;
   flex: 1;
-  background: linear-gradient(to bottom, #1f1f1f, #111);
 }
 .assistant .recorder {
   height: 90px;
   padding: 10px 20px;
-  background: linear-gradient(to bottom, #111, #222);
 }
 .assistant .last {
   position: relative;
@@ -23,62 +20,51 @@
   transition: height 0.5s ease;
   padding: 10px 20px 30px;
   border-bottom: 1px solid #777;
-  background: linear-gradient(to bottom, #222, #333);
 }
 .conversation {
   display: flex;
   flex-direction: column;
-  position: absolute;
-  left: 0;
-  top: 0;
-  right: 0;
-  bottom: 0;
   margin: 20px;
-  overflow: scroll;
 }
-.conversation .goals-header .goals-title {
-  margin: 10px;
-  width: calc(50% - 40px);
-  float: left;
+.conversation .goals-header {
+  display: flex;
+  justify-content: space-between;
+}
+.conversation .goals-header h2 {
+  color: var(--primary-light);
 }
 .conversation .goals-header .goals-toggle {
-  margin: 10px;
-  float: right;
-  text-align: right;
-  width: calc(50% - 40px);
-  border: none;
   background-color: transparent;
-  color: #3ff;
+  color: var(--secondary-accent);
   cursor: pointer;
+  font-weight: 700;
 }
-.conversation .goals, .conversation .message {
-  margin: 10px;
+.conversation .goals,
+.conversation .message {
+  margin: 10px 0;
   padding: 10px;
   word-break: break-word;
   white-space: break-spaces;
-  border-radius: 10px;
-  font-size: 1.2rem;
-  line-height: 1.5rem;
-}
-.conversation .goals .text.editing, .conversation .message .text.editing {
-  outline: none;
+  border-radius: var(--border-radius-medium);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-base);
 }
 .conversation .goals {
-  width: calc(100% - 40px);
-  background-color: #333;
+  background-color: var(--secondary-darker);
+  border-radius: var(--border-radius-medium);
+  border: 5px solid var(--secondary-accent);
 }
 .conversation .message-user {
-  position: relative;
-  max-width: 70%;
-  background-color: #f1f1f1;
-  color: #333;
   align-self: end;
+  color: var(--secondary);
+  max-width: 70%;
+  background-color: var(--gray-light);
 }
 .conversation .message-assistant {
-  max-width: 70%;
   align-self: start;
-  background-color: #0088ff;
-  color: #fff;
+  color: var(--text-on-secondary);
+  max-width: 70%;
+  background-color: var(--secondary-light);
 }
 .last-message-container {
   position: absolute;
@@ -190,4 +176,4 @@
 }
 
 
-/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNjc3NcXGFzc2lzdGFudC5zY3NzIiwic2Nzc1xcY29udmVyc2F0aW9uLnNjc3MiLCJzY3NzXFxsYXN0LW1lc3NhZ2Uuc2NzcyIsInNjc3NcXHJlY29yZGVyLWJ1dHRvbi5zY3NzIiwic2Nzc1xcdXNlci1tZXNzYWdlLWFjdGlvbnMuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTs7QUFFQTtFQUNFO0VBQ0E7RUFDQTtFQUNBOztBQUdGO0VBQ0U7RUFDQTtFQUNBOztBQUdGO0VBQ0U7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBOztBQzNCSjtFQUNFO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTs7QUFHRTtFQUNFO0VBQ0E7RUFDQTs7QUFHRjtFQUNFO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7O0FBSUo7RUFDRTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTs7QUFFQTtFQUNFOztBQUlKO0VBQ0U7RUFDQTs7QUFHRjtFQUNFO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7O0FBR0Y7RUFDRTtFQUNBO0VBQ0E7RUFDQTs7QUM3REo7RUFDRTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUVBO0VBQ0E7RUFDQTtFQUNBOztBQUVBO0VBQ0U7RUFDQTtFQUNBO0VBQ0E7O0FBR0Y7RUFDRTtFQUNBOztBQUVBO0VBQ0U7O0FBR0Y7RUFDRTs7QUFJSjtFQUNFO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7O0FDMUNKO0VBQ0U7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBOzs7QUFHRjtFQUNFO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBOzs7QUFHRjtFQUNFO0VBQ0E7OztBQUdGO0VBQ0U7RUFDQTtFQUNBOztBQzNCRjtFQUNFO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTs7QUFFQTtFQUNFO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7O0FBR0Y7RUFDRTtFQUNBO0VBQ0E7O0FBRUE7RUFDRTs7QUFJSjtFQUNFO0VBQ0E7RUFDQTs7QUFFQTtFQUNFOztBQUlKO0VBQ0U7O0FBR0Y7RUFDRSIsImZpbGUiOiIifQ== */
+/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNjc3NcXGFzc2lzdGFudC5zY3NzIiwic2Nzc1xcY29udmVyc2F0aW9uLnNjc3MiLCJzY3NzXFxsYXN0LW1lc3NhZ2Uuc2NzcyIsInNjc3NcXHJlY29yZGVyLWJ1dHRvbi5zY3NzIiwic2Nzc1xcdXNlci1tZXNzYWdlLWFjdGlvbnMuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7O0FBRUE7RUFDRTtFQUNBO0VBQ0E7O0FBR0Y7RUFDRTtFQUNBOztBQUdGO0VBQ0U7RUFDQTtFQUNBO0VBQ0E7RUFDQTs7QUN2Qko7RUFDRTtFQUNBO0VBQ0E7O0FBRUE7RUFDRTtFQUNBOztBQUVBO0VBQ0U7O0FBRUY7RUFDRTtFQUNBO0VBQ0E7RUFDQTs7QUFJSjtBQUFBO0VBRUU7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7O0FBR0Y7RUFDRTtFQUNBO0VBQ0E7O0FBR0Y7RUFDRTtFQUNBO0VBQ0E7RUFDQTs7QUFHRjtFQUNFO0VBQ0E7RUFDQTtFQUNBOztBQ2hESjtFQUNFO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBRUE7RUFDQTtFQUNBO0VBQ0E7O0FBRUE7RUFDRTtFQUNBO0VBQ0E7RUFDQTs7QUFHRjtFQUNFO0VBQ0E7O0FBRUE7RUFDRTs7QUFHRjtFQUNFOztBQUlKO0VBQ0U7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTs7QUMxQ0o7RUFDRTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7OztBQUdGO0VBQ0U7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7OztBQUdGO0VBQ0U7RUFDQTs7O0FBR0Y7RUFDRTtFQUNBO0VBQ0E7O0FDM0JGO0VBQ0U7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBOztBQUVBO0VBQ0U7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTs7QUFHRjtFQUNFO0VBQ0E7RUFDQTs7QUFFQTtFQUNFOztBQUlKO0VBQ0U7RUFDQTtFQUNBOztBQUVBO0VBQ0U7O0FBSUo7RUFDRTs7QUFHRjtFQUNFIiwiZmlsZSI6IiJ9 */

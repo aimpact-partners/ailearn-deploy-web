@@ -1,0 +1,17 @@
+.beyond-test {
+  color: #FF8056;
+}
+.page__container {
+  display: flex;
+  padding: 20px;
+  max-width: 1024px;
+  margin: 20px auto;
+  flex-direction: row;
+  background: var(--bg-element);
+}
+.page__container .beyond {
+  color: #FF8056;
+}
+
+
+/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNhc3NcXHBydWViYS5zY3NzIiwic2Fzc1xcc3R5bGVzLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRTs7QUNERjtFQUNFO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTs7QUFFQTtFQUNFIiwiZmlsZSI6IiJ9 */
